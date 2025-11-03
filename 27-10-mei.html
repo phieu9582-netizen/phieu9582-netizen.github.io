@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechStore – Máy tính & Laptop chính hãng</title>
+
+  <style>
+    :root{
+      --bg:#0b1224; --bg2:#0f1b35;
+      --panel:#0e162b; --border:#213456;
+      --txt:#e8eeff; --muted:#b6c5ff;
+      --brand:#4f7cff; --brand2:#22c55e;
+      --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--txt);font:16px/1.6 system-ui,Segoe UI,Arial}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* Topbar */
+    .topbar{background:#152446;color:var(--muted);font-size:14px}
+    .container{max-width:1180px;margin:auto;padding:0 16px}
+    .topbar .container{display:flex;gap:12px;justify-content:center;padding:8px 0}
+
+    /* NAV */
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(16,24,48,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:10px;background:var(--brand);display:grid;place-items:center}
+    header.nav nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0}
+    header.nav nav a{padding:8px 10px;border-radius:8px;color:var(--muted)}
+    header.nav nav a:hover{background:rgba(255,255,255,.10);color:#fff}
+    .search{margin-left:auto;display:flex;gap:10px;align-items:center}
+    .search input[type="search"]{padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:#0a1326;color:#e9f0ff;min-width:260px;outline:none}
+
+    /* Buttons */
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:#14213d;color:#fff;cursor:pointer}
+    .btn-outline{background:transparent}
+    .btn-primary{background:var(--brand);border-color:var(--brand)}
+    .btn:hover{filter:brightness(1.06)}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.4fr .9fr;gap:22px;align-items:center;padding:28px 0}
+    .pill{display:inline-block;background:#172447;color:#cfe0ff;padding:6px 12px;border-radius:999px;font-size:13px;margin-bottom:12px}
+    .hero h1{margin:0 0 8px;font-size:32px;line-height:1.2}
+    .hero p{margin:0 0 18px;color:var(--muted)}
+    .hero-cta{display:flex;gap:12px}
+    .hero-card{background:linear-gradient(180deg,#0e162b,#0b1224);padding:16px;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card img{height:160px;width:100%;object-fit:cover;border-radius:12px;margin-bottom:12px}
+    .hero-card .row{display:flex;justify-content:space-between;align-items:center;margin:8px 0}
+    .specs{color:#aac3ff;font-size:14px}
+    .price-tag{font-weight:700;color:#ffd166}
+.badge{background:#173;color:#c3ffd6;padding:4px 10px;border-radius:999px;font-size:13px}
+/* USP */
+    .usps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}
+    .usp{background:linear-gradient(180deg,#0e162b,#0b1224);border:1px solid var(--border);border-radius:12px;padding:14px}
+    .usp strong{display:block;color:#fff}
+    .usp span{color:var(--muted);font-size:14px}
+
+    /* Layout chính */
+    .layout{display:grid;grid-template-columns:260px 1fr;gap:22px;margin:18px 0}
+    .sidebar{position:sticky;top:86px;align-self:start}
+    .filter{background:linear-gradient(180deg,#0e162b,#0b1224);border:1px solid var(--border);border-radius:12px;padding:16px}
+    .filter h3{margin:0 0 10px}
+    .group{margin:14px 0}
+    .checkbox{display:flex;align-items:center;gap:8px;margin:6px 0;color:#d7e3ff}
+    .checkbox input{accent-color:var(--brand)}
+    .range{width:100%}
+
+    /* Grid sản phẩm demo */
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(180deg,#0e162b,#0b1224);border:1px solid var(--border);border-radius:12px;padding:12px}
+    .card h4{margin:8px 0 6px}
+    .price{color:#ffe08a;font-weight:700}
+
+    /* Footer */
+    footer{margin-top:40px;background:#0a1122;border-top:1px solid var(--border)}
+    .footgrid{display:grid;grid-template-columns:1fr;gap:12px;max-width:1180px;margin:auto;padding:24px 16px;color:#bcd2ff}
+    footer a{color:#e5edff}
+    .copyright{color:#8fa7df;margin-top:8px;font-size:14px}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero{grid-template-columns:1fr}
+      .layout{grid-template-columns:1fr}
+      .search{display:none}
+      .usps{grid-template-columns:repeat(2,1fr)}
+      .products{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width: 520px){
+      .products{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      🚚 Giao nhanh 2h nội thành • 🛡️ Bảo hành chính hãng 12–36 tháng • 💬 Hỗ trợ 24/7
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <div class="logo">TS</div><span>TechStore</span>
+      </a>
+
+      <nav aria-label="Chính">
+        <ul>
+          <li><a href="#san-pham">Sản phẩm</a></li>
+          <li><a href="#uu-diem">Ưu điểm</a></li>
+          <li><a href="#lien-he">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <div class="search" role="search">
+        <input type="search" placeholder="Tìm: Laptop gaming, PC văn phòng…" aria-label="Tìm kiếm sản phẩm">
+        <button class="btn btn-outline" aria-label="Tìm">Tìm</button>
+        <button class="btn btn-primary" aria-label="Xem giỏ hàng">Giỏ hàng</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container">
+    <div>
+      <span class="pill">🔥 Mở bán tuần này - Giảm tới 20% cho Laptop Intel/AMD</span>
+<h1>Máy tính & laptop chính hãng – hiệu năng mạnh, giá tốt</h1>
+      <p>Chọn chiếc máy phù hợp nhu cầu học tập, làm việc hay gaming. Hỗ trợ nâng cấp RAM/SSD, cài đặt phần mềm trọn đời.</p>
+      <div class="hero-cta">
+        <a href="#san-pham" class="btn btn-primary">Xem sản phẩm</a>
+        <a href="#uu-diem" class="btn btn-outline">Vì sao chọn TechStore?</a>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Sản phẩm nổi bật">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" alt="Laptop nổi bật">
+      <div class="row">
+        <div>
+          <strong>Ultrabook 14 Pro</strong>
+          <div class="specs">Core i7 • 16GB • 512GB SSD • 1.2kg</div>
+        </div>
+        <div class="price-tag">22.990.000đ</div>
+      </div>
+      <div class="row">
+        <span class="badge">Hàng sẵn kho</span>
+        <a href="#" class="btn btn-primary">Mua ngay</a>
+      </div>
+    </aside>
+  </section>
+
+  <main class="container">
+    <!-- USP -->
+    <div class="usps" id="uu-diem">
+      <div class="usp"><strong>Trả góp 0%</strong><span>Thủ tục nhanh trong 10 phút</span></div>
+      <div class="usp"><strong>Đổi mới 30 ngày</strong><span>Lỗi do nhà sản xuất</span></div>
+      <div class="usp"><strong>Miễn phí cài đặt</strong><span>Windows & phần mềm cơ bản</span></div>
+      <div class="usp"><strong>Freeship</strong><span>Đơn từ 3.000.000</span></div>
+    </div>
+
+    <!-- Layout: Sidebar + Products -->
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="filter">
+          <h3>Bộ lọc</h3>
+
+          <div class="group">
+            <strong>Danh mục</strong>
+            <label class="checkbox"><input type="checkbox" checked> Laptop văn phòng</label>
+            <label class="checkbox"><input type="checkbox"> PC lắp ráp</label>
+            <label class="checkbox"><input type="checkbox"> PC đồng bộ</label>
+            <label class="checkbox"><input type="checkbox"> Laptop gaming</label>
+            <label class="checkbox"><input type="checkbox"> Màn hình</label>
+          </div>
+
+          <div class="group">
+            <strong>Thương hiệu</strong>
+            <label class="checkbox"><input type="checkbox"> DELL</label>
+            <label class="checkbox"><input type="checkbox"> HP</label>
+            <label class="checkbox"><input type="checkbox"> ACER</label>
+            <label class="checkbox"><input type="checkbox"> ASUS</label>
+          </div>
+
+          <div class="group">
+            <strong>Khoảng giá</strong>
+            <input class="range" type="range" min="5" max="60" value="25">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted)"><span>5tr</span><span>60tr+</span></div>
+          </div>
+        </div>
+      </aside>
+<section id="san-pham" class="products" aria-label="Danh sách sản phẩm">
+        <!-- Card mẫu 1 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Laptop văn phòng">
+          <h4>Laptop Office 15</h4>
+          <p class="specs">i5 • 8GB • 512GB • FHD</p>
+          <div class="price">13.990.000đ</div>
+          <a class="btn btn-outline" href="#">Xem chi tiết</a>
+        </article>
+        <!-- Card mẫu 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" alt="Laptop mỏng nhẹ">
+          <h4>Ultrabook 14</h4>
+          <p class="specs">i7 • 16GB • 512GB • 1.2kg</p>
+          <div class="price">21.990.000đ</div>
+          <a class="btn btn-outline" href="#">Xem chi tiết</a>
+        </article>
+        <!-- Card mẫu 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?q=80&w=1200&auto=format&fit=crop" alt="Laptop gaming">
+          <h4>Gaming 15 RTX</h4>
+          <p class="specs">i5 • 16GB • 512GB • RTX 3050</p>
+          <div class="price">22.490.000đ</div>
+          <a class="btn btn-outline" href="#">Xem chi tiết</a>
+        </article>
+      </section>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer id="lien-he">
+    <div class="footgrid">
+      <div>
+        <h3>TechStore</h3>
+        <p>Số 123, Đường Công Nghệ, Quận Sáng Tạo, TP. Hà Nội</p>
+        <p>Hotline: <a href="tel:0123456789">0123 456 789</a> • Email: <a href="mailto:sales@techstore.vn">sales@techstore.vn</a></p>
+        <div class="copyright">© 2025 TechStore. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
