@@ -141,3 +141,20 @@ body{
   .dropdown{ position:static; border:none; }
   .menu li:hover > .dropdown{ display:block; } /* vẫn xổ nhưng sẽ nằm dưới */
 }
+card{
+  border:1px solid var(--gray);
+  background:#fff;
+  padding:12px;
+  border-radius:4px;
+}
+
+.card img{
+  width:100%;
+  height:180px;        /* chỉnh 160–200 tùy mắt anh */
+  object-fit:cover;    /* cắt viền cho ảnh đầy khung */
+  border-radius:4px;
+  display:block;
+  margin-bottom:10px;
+}
+
+.card h3{ margin:0; font-size:18px; }
