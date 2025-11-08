@@ -95,10 +95,10 @@ body{
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 10px;
-  display: none;       /* Ẩn mặc định */
+  display: none;      
   z-index: 1000;
-  width: 220px;        /* giống bản phác */
-  margin-inline: auto; /* căn giữa dưới mục cha */
+  width: 220px;        
+  margin-inline: auto; 
   box-shadow: 0 8px 20px rgba(0,0,0,.06);
 }
 .has-submenu:hover .menu-level-2{ display: block; }
